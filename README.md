@@ -38,6 +38,13 @@ appearing in NLS_LANG may not match the names used in CFFI.
 
 ### Loading OCI library
 
+Before loading library will work you need to check this SO question:
+https://stackoverflow.com/questions/3588591/clsql-connect-oracle-database
+The answer by Laci Kosco tells you to adjust your
+/etc/ld.so.conf.d/oracle.conf
+to point to the location of your library
+and run sudo ldconfig
+
 The application makes an attempt to load Oracle OCI library during the
 first call to `dbi:connect`. By default, the OCI library is searched in
 ORACLE_HOME, ORACLE_HOME/lib, and ORACLE_HOME/bin directories, as well
